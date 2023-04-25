@@ -7,26 +7,36 @@ class User:
         self.age = age
 
     def say_hello():
-        a = 
         return 'Hello world'
 
 
-# class Admin(User):
-#     def __init__(self, name, age):
-#         super().__init__(name, age)
-#     def mend_something():
-#         return 01101101
+class Admin(User):
+    def __init__(self, name, age):
+        super().__init__(name, age)
+
+    def mend_something():
+        return 1101101
 
 
+class Developer(Admin):
+    def __init__(self, name, age):
+        super().__init__(name, age)
+
+    def write_code():
+        return [0, 1, 0, 0, 1, 0]
 
 
+class TestUsers(unittest.TestCase):
 
+    def test_string(self):
+        self.assertEqual(type(User.say_hello()), str)
 
-user = User('Oleksii', 40)
-user.say_hello
+    def test_integer(self):
+        self.assertEqual(type(Admin.mend_something()), int)
+
+    def test_list(self):
+        self.assertEqual(type(Developer.write_code()), list)
 
 
 if __name__ == '__main__':
     unittest.main()
-
-
