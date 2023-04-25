@@ -37,6 +37,10 @@ class TestUsers(unittest.TestCase):
     def test_list(self):
         self.assertEqual(type(Developer.write_code()), list)
 
+    def test_numbers(self):
+        for i in Developer.write_code():
+            self.assertEqual(type(Developer.write_code()[i]), int)
+
 
 if __name__ == '__main__':
     unittest.main()
